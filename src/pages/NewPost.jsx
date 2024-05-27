@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, VStack, Heading, Input, Textarea, Button, Image, Box } from "@chakra-ui/react";
+import { Container, VStack, Heading, Input, Textarea, Button, Image, Box, useColorMode } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 const NewPost = () => {
@@ -7,6 +7,7 @@ const NewPost = () => {
   const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
   const navigate = useNavigate();
+  const { colorMode } = useColorMode();
 
   const handleImageChange = (e) => {
     setImage(URL.createObjectURL(e.target.files[0]));
